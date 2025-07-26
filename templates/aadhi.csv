@@ -1,0 +1,9 @@
+ID,Age,Income,Education_Level,Gender,Weight
+1,25,32000,Bachelor,Male,1.2
+2,30,45000,Master,Female,1.0
+3,28,,Bachelor,Male,0.8
+4,,37000,Diploma,Female,1.1
+5,35,NaN,PhD,Male,0.9
+6,22,31000,Master,Other,1.3
+7,27,40000,Bachelor,Male,
+8,29,39000,Master,Female,1.0
