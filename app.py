@@ -12,7 +12,7 @@ from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.tools import DuckDuckGoSearchRun
-from langchain_community.chat_models import ChatGroq
+from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from langgraph.graph import END, MessageGraph
@@ -29,8 +29,11 @@ from crewai import Agent, Task, Crew, Process
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 
 # Initialize Groq LLM
-GROQ_API_KEY = ""
-MODEL_NAME = "mixtral-8x7b-32768"
+MODEL_NAME = "llama3-70b-8192"
+llm = ChatGroq(
+    groq_api_key=os.getenv("GROQ_API_KEY"),
+    model_name="mixtral-8x7b-32768"  # or any Groq-supported model like llama3-70b
+)
 
 # Set page config
 st.set_page_config(
